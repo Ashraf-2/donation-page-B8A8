@@ -1,12 +1,15 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import DonatedCard from "./DonatedCard";
+import Statistics from "../../Statistics/Statistics";
+
 const Donatin = () => {
     const [donations, setDonations] = useState([]);
     const [noFound, setNoFound] = useState("");
     const [isShow, setIsShow] = useState(false);
     const [totalDonation, setTotalDonation] = useState(0);
     console.log('length: ',donations.length);
+    const donationLen = donations.length;
     
 
 
@@ -48,9 +51,9 @@ const Donatin = () => {
 
                         </div>
                         <div className="mt-5 text-center flex items-center">
-                            {donations.length > 4 ? <button onClick={() => setIsShow(!isShow)} className={`btn btn-accent  mx-auto {
-                                isShow ? "": "hidden"}
-                            } `}>{isShow ?"Show Less":"See All"}</button>:""}
+                            {donations.length > 4 && !isShow? <button onClick={() => setIsShow(!isShow)} className={`btn btn-accent  mx-auto ${
+                                isShow ? "": ""}
+                            } `}>See All</button>:""}
                         </div>
                     </div>
             }

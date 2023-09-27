@@ -18,7 +18,7 @@ const Banner = () => {
                                 
                                 
                                 <div className="mt-5 flex items-center">
-                                    <input className="py-2.5 border-2" type="text" name="" id="" placeholder="Search here" />
+                                    <input className="py-2.5 px-2 border-2" type="text" name="" id="" placeholder="Search here.." />
                                     <button className="btn btn-primary border-none rounded-none bg-red-600 text-white">Search</button>
                                 </div>
                             </div>
