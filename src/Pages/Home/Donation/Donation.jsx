@@ -33,7 +33,7 @@ const Donatin = () => {
     return (
         <div>
             {
-                noFound ? <h1>{noFound}</h1> :
+                noFound ? <h1 className="mx-10 flex justify-center items-center h-screen text-3xl font-bold">{noFound}</h1> :
                     <div className="my-5">
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
