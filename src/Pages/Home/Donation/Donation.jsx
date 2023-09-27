@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import DonatedCard from "./DonatedCard";
 const Donatin = () => {
     const [donations, setDonations] = useState([]);
     const [noFound, setNoFound] = useState("");
     const [isShow, setIsShow] = useState(false);
     const [totalDonation, setTotalDonation] = useState(0);
+    console.log('length: ',donations.length);
+    
 
 
     useEffect(() => {
@@ -14,7 +17,7 @@ const Donatin = () => {
         if (donatedItems) {
 
             setDonations(donatedItems);
-            const total = donatedItems.reduce((preValue, currentItem) => preValue + currentItem.price, 0);
+            const total = donatedItems.reduce((preValue, currentItem) => preValue + parseFloat(currentItem.price), 0);
             setTotalDonation(total);
         }
         else {
@@ -35,17 +38,17 @@ const Donatin = () => {
                             {/* {donations.length > 0 ? <button onClick={handleLocalClear} className="btn btn-error text-base mx-auto mb-5 text-white ">Delete All</button> : ""} */}
                             <h1 className="text-xl font-bold mb-5">Total donation: {totalDonation}</h1>
                         </div>
-                        <div className="grid grid-cols-2 gap-5 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
                             {
-                                isShow ? donations.map(phone => <FavPhnCard key={phone.id} phone={phone} ></FavPhnCard>)
-                                    : favourites.slice(0, 4).map(phone => <FavPhnCard key={phone.id} phone={phone} ></FavPhnCard>)
+                                isShow ? donations.map(donation => <DonatedCard key={donation.id} donation={donation}> </DonatedCard> )
+                                    : donations.slice(0, 4).map(donation => <DonatedCard key={donation.id} donation={donation}> </DonatedCard>)
 
 
                             }
 
                         </div>
                         <div className="mt-5 text-center flex items-center">
-                            {favourites.length > 4 ? <button onClick={() => setIsShow(!isShow)} className="btn btn-accent mx-auto">{isShow ?"Show Less":"See More"}</button>:""}
+                            {donations.length > 4 ? <button onClick={() => setIsShow(!isShow)} className="btn btn-accent mx-auto">{isShow ?"Show Less":"See More"}</button>:""}
                         </div>
                     </div>
             }
