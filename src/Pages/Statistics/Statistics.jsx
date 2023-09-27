@@ -31,7 +31,7 @@ const Statistics = () => {
         { name: "Total Donation", value: remainPort, color: "#FF444A" }
     ];
     return (
-        <div className="h-screen w-full ">
+        <div className="h-[80vh] w-full ">
 
             <ResponsiveContainer>
                 <PieChart>

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import DonatedCard from "./DonatedCard";
-import Statistics from "../../Statistics/Statistics";
 
 const Donatin = () => {
     const [donations, setDonations] = useState([]);
@@ -9,7 +8,6 @@ const Donatin = () => {
     const [isShow, setIsShow] = useState(false);
     const [totalDonation, setTotalDonation] = useState(0);
     console.log('length: ',donations.length);
-    const donationLen = donations.length;
     
 
 
@@ -36,11 +34,8 @@ const Donatin = () => {
         <div>
             {
                 noFound ? <h1>{noFound}</h1> :
-                    <div>
-                        <div className="text-center">
-                            {/* {donations.length > 0 ? <button onClick={handleLocalClear} className="btn btn-error text-base mx-auto mb-5 text-white ">Delete All</button> : ""} */}
-                            <h1 className="text-xl font-bold mb-5">Total donation: {totalDonation}</h1>
-                        </div>
+                    <div className="my-5">
+                        
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 ">
                             {
                                 isShow ? donations.map(donation => <DonatedCard key={donation.id} donation={donation}> </DonatedCard> )
