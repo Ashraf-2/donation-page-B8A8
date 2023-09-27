@@ -48,7 +48,9 @@ const Donatin = () => {
 
                         </div>
                         <div className="mt-5 text-center flex items-center">
-                            {donations.length > 4 ? <button onClick={() => setIsShow(!isShow)} className="btn btn-accent mx-auto">{isShow ?"Show Less":"See More"}</button>:""}
+                            {donations.length > 4 ? <button onClick={() => setIsShow(!isShow)} className={`btn btn-accent  mx-auto {
+                                isShow ? "": "hidden"}
+                            } `}>{isShow ?"Show Less":"See All"}</button>:""}
                         </div>
                     </div>
             }
