@@ -4,11 +4,14 @@ import HomeDonations from "./HomeDonations";
 
 const Home = () => {
     const donations = useLoaderData();
-    console.log("donations in home page: ",donations);
+    console.log("donations in home page: ", donations);
     return (
         <div>
             <Banner></Banner>
-            <HomeDonations donations = {donations}></HomeDonations>
+            <div className="mx-10">
+
+                <HomeDonations donations={donations}></HomeDonations>
+            </div>
 
         </div>
     );
